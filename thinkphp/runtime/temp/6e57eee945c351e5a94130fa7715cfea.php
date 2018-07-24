@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:93:"C:\Users\asus\Desktop\thinkphp\public/../application/index\view\jurisdiction\jurisdiction.php";i:1532324142;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:93:"C:\Users\asus\Desktop\thinkphp\public/../application/index\view\jurisdiction\jurisdiction.php";i:1532335350;}*/ ?>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -37,298 +37,67 @@
         .tab-pane{
             min-height:600px;
         }
-       /* .panel-body{
-            min-height: 418px;
-        }
-        .tab-content {
-            position: fixed;
-            width: 74%;
-            top: 0;
-            left: 0;
-            min-height: 100%;
-        }
-        .tabs-container .tabs-right .panel-body{
-            margin-right: 0;
-            width: 100%;
-        }
-        .tab-pane{
-            min-height: 500px;
-        }*/
     </style>
 </head>
 <body  class="gray-bg">
 <div class="wrapper wrapper-content fadeInRight">
     <div class="tabs-container">
         <div class="tabs-right">
+
             <ul class="nav nav-tabs" id="authorizeNavtabs" style="margin-left:0">
-                <li class="active"><a data-toggle="tab" href="#tab-admin" aria-expanded="true">员工管理</a></li>
-                <li><a data-toggle="tab" href="#tab-member">会员管理</a></li>
-                <li><a data-toggle="tab" href="#tab-checkin">商户入驻审核</a></li>
-                <li><a data-toggle="tab" href="#tab-recycle">商户回收会员积分管理</a></li>
-                <li><a data-toggle="tab" href="#tab-shop">商户列表</a></li>
+                 <?php
+                 $num = 0;
+                    foreach ($admin_permissions as $k => $v) {
+                        if($num==0){
+                            $str = 'aria-expanded="true"';
+                            $class = 'class="active"';
+                        }else{
+                           $str = $class = '';
+                        }
+                        $num ++;
+                        echo '<li '. $class .' ><a data-toggle="tab" href="#'.$k.'" '.$str .' >'.$v['_title'].'</a></li>';
+                    }
+                    ?>
             </ul>
-            <div class="tab-content form-horizontal">
-                <div id="tab-admin" class="tab-pane active">
+           <div class="tab-content form-horizontal">
+            
+                <?php
+                    $num = 0;
+                    foreach ($admin_permissions as $k => $v) {
+                        if($num==0){
+                            $class = 'active';
+                        }else{
+                          $class = '';
+                        }
+                        $num ++;
+                ?>
+                <div id="<?php echo $k;?>" class="tab-pane <?php echo $class;?>">
                     <div class="panel-body">
-                        <h3>员工管理</h3>
-                        <div class="hr-line-dashed"></div>
-                        <div class="row" style="height:30px">
-                            <div class="col-xs-6">
-                                <label class="col-xs-6 control-label">部门管理[浏览]</label>
-                                 <div class="col-xs-6 switch">
-                                            <input type="checkbox" name="authorize[]" value="checkin.browse" data-size="small" data-on-text="开启" data-off-text="关闭" checked="" />
-                                </div>
-                            </div>
-                            <div class="col-xs-6">
-                                <label class="col-xs-6 control-label">部门管理[编辑]</label>
-                                <div class="col-xs-6 switch">
-                                            <input type="checkbox" name="authorize[]" value="checkin.browse" data-size="small" data-on-text="开启" data-off-text="关闭" checked="" />
-                                </div>
-                            </div>
-                        </div>
-                        <div class="hr-line-dashed"></div>
-                        <div class="row" style="height:30px">
-                            <div class="col-xs-6">
-                                <label class="col-xs-6 control-label">员工管理[浏览]</label>
-                            <div class="col-xs-6 switch">
-                                            <input type="checkbox" name="authorize[]" value="checkin.browse" data-size="small" data-on-text="开启" data-off-text="关闭" checked="" />
-                                </div>
-                            </div>
-                            <div class="col-xs-6">
-                                <label class="col-xs-6 control-label">员工管理[编辑]</label>
-                             <div class="col-xs-6 switch">
-                                            <input type="checkbox" name="authorize[]" value="checkin.browse" data-size="small" data-on-text="开启" data-off-text="关闭" checked="" />
-                                </div>
-                            </div>
-                        </div>
-<div class="hr-line-dashed"></div>
-                        <div class="row" style="height:30px">
-                            <div class="col-xs-6">
-                                <label class="col-xs-6 control-label">员工管理[浏览]</label>
-                            <div class="col-xs-6 switch">
-                                            <input type="checkbox" name="authorize[]" value="checkin.browse" data-size="small" data-on-text="开启" data-off-text="关闭" checked="" />
-                                </div>
-                            </div>
-                            <div class="col-xs-6">
-                                <label class="col-xs-6 control-label">员工管理[编辑]</label>
-                             <div class="col-xs-6 switch">
-                                            <input type="checkbox" name="authorize[]" value="checkin.browse" data-size="small" data-on-text="开启" data-off-text="关闭" checked="" />
-                                </div>
-                            </div>
-                        </div>
-<div class="hr-line-dashed"></div>
-                        <div class="row" style="height:30px">
-                            <div class="col-xs-6">
-                                <label class="col-xs-6 control-label">员工管理[浏览]</label>
-                            <div class="col-xs-6 switch">
-                                            <input type="checkbox" name="authorize[]" value="checkin.browse" data-size="small" data-on-text="开启" data-off-text="关闭" checked="" />
-                                </div>
-                            </div>
-                            <div class="col-xs-6">
-                                <label class="col-xs-6 control-label">员工管理[编辑]</label>
-                             <div class="col-xs-6 switch">
-                                            <input type="checkbox" name="authorize[]" value="checkin.browse" data-size="small" data-on-text="开启" data-off-text="关闭" checked="" />
-                                </div>
-                            </div>
-                        </div>
-<div class="hr-line-dashed"></div>
-                        <div class="row" style="height:30px">
-                            <div class="col-xs-6">
-                                <label class="col-xs-6 control-label">员工管理[浏览]</label>
-                            <div class="col-xs-6 switch">
-                                            <input type="checkbox" name="authorize[]" value="checkin.browse" data-size="small" data-on-text="开启" data-off-text="关闭" checked="" />
-                                </div>
-                            </div>
-                            <div class="col-xs-6">
-                                <label class="col-xs-6 control-label">员工管理[编辑]</label>
-                             <div class="col-xs-6 switch">
-                                            <input type="checkbox" name="authorize[]" value="checkin.browse" data-size="small" data-on-text="开启" data-off-text="关闭" checked="" />
-                                </div>
-                            </div>
-                        </div>
-<div class="hr-line-dashed"></div>
-                        <div class="row" style="height:30px">
-                            <div class="col-xs-6">
-                                <label class="col-xs-6 control-label">员工管理[浏览]</label>
-                            <div class="col-xs-6 switch">
-                                            <input type="checkbox" name="authorize[]" value="checkin.browse" data-size="small" data-on-text="开启" data-off-text="关闭" checked="" />
-                                </div>
-                            </div>
-                            <div class="col-xs-6">
-                                <label class="col-xs-6 control-label">员工管理[编辑]</label>
-                             <div class="col-xs-6 switch">
-                                            <input type="checkbox" name="authorize[]" value="checkin.browse" data-size="small" data-on-text="开启" data-off-text="关闭" checked="" />
-                                </div>
-                            </div>
-                        </div>
-<div class="hr-line-dashed"></div>
-                        <div class="row" style="height:30px">
-                            <div class="col-xs-6">
-                                <label class="col-xs-6 control-label">员工管理[浏览]</label>
-                            <div class="col-xs-6 switch">
-                                            <input type="checkbox" name="authorize[]" value="checkin.browse" data-size="small" data-on-text="开启" data-off-text="关闭" checked="" />
-                                </div>
-                            </div>
-                            <div class="col-xs-6">
-                                <label class="col-xs-6 control-label">员工管理[编辑]</label>
-                             <div class="col-xs-6 switch">
-                                            <input type="checkbox" name="authorize[]" value="checkin.browse" data-size="small" data-on-text="开启" data-off-text="关闭" checked="" />
-                                </div>
-                            </div>
-                        </div>
-<div class="hr-line-dashed"></div>
-                        <div class="row" style="height:30px">
-                            <div class="col-xs-6">
-                                <label class="col-xs-6 control-label">员工管理[浏览]</label>
-                            <div class="col-xs-6 switch">
-                                            <input type="checkbox" name="authorize[]" value="checkin.browse" data-size="small" data-on-text="开启" data-off-text="关闭" checked="" />
-                                </div>
-                            </div>
-                            <div class="col-xs-6">
-                                <label class="col-xs-6 control-label">员工管理[编辑]</label>
-                             <div class="col-xs-6 switch">
-                                            <input type="checkbox" name="authorize[]" value="checkin.browse" data-size="small" data-on-text="开启" data-off-text="关闭" checked="" />
-                                </div>
-                            </div>
-                        </div>
-<div class="hr-line-dashed"></div>
-                        <div class="row" style="height:30px">
-                            <div class="col-xs-6">
-                                <label class="col-xs-6 control-label">员工管理[浏览]</label>
-                            <div class="col-xs-6 switch">
-                                            <input type="checkbox" name="authorize[]" value="checkin.browse" data-size="small" data-on-text="开启" data-off-text="关闭" checked="" />
-                                </div>
-                            </div>
-                            <div class="col-xs-6">
-                                <label class="col-xs-6 control-label">员工管理[编辑]</label>
-                             <div class="col-xs-6 switch">
-                                            <input type="checkbox" name="authorize[]" value="checkin.browse" data-size="small" data-on-text="开启" data-off-text="关闭" checked="" />
-                                </div>
-                            </div>
-                        </div>
-<div class="hr-line-dashed"></div>
-                        <div class="row" style="height:30px">
-                            <div class="col-xs-6">
-                                <label class="col-xs-6 control-label">员工管理[浏览]</label>
-                            <div class="col-xs-6 switch">
-                                            <input type="checkbox" name="authorize[]" value="checkin.browse" data-size="small" data-on-text="开启" data-off-text="关闭" checked="" />
-                                </div>
-                            </div>
-                            <div class="col-xs-6">
-                                <label class="col-xs-6 control-label">员工管理[编辑]</label>
-                             <div class="col-xs-6 switch">
-                                            <input type="checkbox" name="authorize[]" value="checkin.browse" data-size="small" data-on-text="开启" data-off-text="关闭" checked="" />
-                                </div>
-                            </div>
-                        </div>
-<div class="hr-line-dashed"></div>
-                        <div class="row" style="height:30px">
-                            <div class="col-xs-6">
-                                <label class="col-xs-6 control-label">员工管理[浏览]</label>
-                            <div class="col-xs-6 switch">
-                                            <input type="checkbox" name="authorize[]" value="checkin.browse" data-size="small" data-on-text="开启" data-off-text="关闭" checked="" />
-                                </div>
-                            </div>
-                            <div class="col-xs-6">
-                                <label class="col-xs-6 control-label">员工管理[编辑]</label>
-                             <div class="col-xs-6 switch">
-                                            <input type="checkbox" name="authorize[]" value="checkin.browse" data-size="small" data-on-text="开启" data-off-text="关闭" checked="" />
-                                </div>
-                            </div>
-                        </div>
-<div class="hr-line-dashed"></div>
-                        <div class="row" style="height:30px">
-                            <div class="col-xs-6">
-                                <label class="col-xs-6 control-label">员工管理[浏览]</label>
-                            <div class="col-xs-6 switch">
-                                            <input type="checkbox" name="authorize[]" value="checkin.browse" data-size="small" data-on-text="开启" data-off-text="关闭" checked="" />
-                                </div>
-                            </div>
-                            <div class="col-xs-6">
-                                <label class="col-xs-6 control-label">员工管理[编辑]</label>
-                             <div class="col-xs-6 switch">
-                                            <input type="checkbox" name="authorize[]" value="checkin.browse" data-size="small" data-on-text="开启" data-off-text="关闭" checked="" />
-                                </div>
-                            </div>
-                        </div>
+                        <h3><?php echo $v['_title'];?></h3>
+                       
 
-
+                  <?php 
+                        $i = 0;
+                        $count = count($v);
+                        foreach ($v as $kk => $vv) {
+                            if ($i != 0) {
+                                if ($i % 2 == 1) {
+                                    echo '<div class="hr-line-dashed"></div>';
+                                    echo '<div class="row" style="height:30px">';
+                                }
+                                echo '<div class="col-xs-6">';
+                                echo '<label class="col-xs-6 control-label">' . $vv . '</label>';
+                                echo '<div class="col-xs-6 switch"><input type="checkbox" name="authorize[]" value="' . $k . '.' . $kk . '" data-size="small" data-on-text="开启" data-off-text="关闭"  /></div>';
+                                echo '</div>';
+                                if ($i % 2 == 0 || $i + 1 == $count) {
+                                    echo '</div>';
+                                }
+                            }
+                            $i++;
+                        }?>
                     </div>
                 </div>
-                <div id="tab-member" class="tab-pane">
-                    <div class="panel-body">
-                        <h3>会员管理</h3>
-                        <div class="hr-line-dashed"></div>
-                        <div class="row" style="height:30px">
-                            <div class="col-xs-6">
-                                <label class="col-xs-6 control-label">浏览</label>
-                             <div class="col-xs-6 switch">
-                                            <input type="checkbox" name="authorize[]" value="checkin.browse" data-size="small" data-on-text="开启" data-off-text="关闭" checked="" />
-                                </div>
-                            </div>
-                            <div class="col-xs-6">
-                                <label class="col-xs-6 control-label">查看会员资料</label>
-                              <div class="col-xs-6 switch">
-                                            <input type="checkbox" name="authorize[]" value="checkin.browse" data-size="small" data-on-text="开启" data-off-text="关闭" checked="" />
-                                </div>
-                            </div>
-                        </div>
-                        <div class="hr-line-dashed"></div>
-                        <div class="row" style="height:30px">
-                            <div class="col-xs-6">
-                                <label class="col-xs-6 control-label">积分记录</label>
-                            <div class="col-xs-6 switch">
-                                            <input type="checkbox" name="authorize[]" value="checkin.browse" data-size="small" data-on-text="开启" data-off-text="关闭" checked="" />
-                                </div>
-                            </div>
-                            <div class="col-xs-6">
-                                <label class="col-xs-6 control-label">发送消息</label>
-                                 <div class="col-xs-6 switch">
-                                            <input type="checkbox" name="authorize[]" value="checkin.browse" data-size="small" data-on-text="开启" data-off-text="关闭" checked="" />
-                                </div>
-                            </div>
-                        </div>
-                        <div class="hr-line-dashed"></div>
-                        <div class="row" style="height:30px">
-                            <div class="col-xs-6">
-                                <label class="col-xs-6 control-label">冻结</label>
-                               <div class="col-xs-6 switch">
-                                            <input type="checkbox" name="authorize[]" value="checkin.browse" data-size="small" data-on-text="开启" data-off-text="关闭" checked="" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div id="tab-checkin" class="tab-pane">
-                    <div class="panel-body">
-                        <h3>商户入驻审核</h3>
-                        <div class="hr-line-dashed"></div>
-                        <div class="row" style="height:30px">
-                            <div class="col-xs-6">
-                                <label class="col-xs-6 control-label">浏览</label>
-                                <div class="col-xs-6 switch">
-                                            <input type="checkbox" name="authorize[]" value="checkin.browse" data-size="small" data-on-text="开启" data-off-text="关闭" checked="" />
-                                </div>
-                            </div>
-                            <div class="col-xs-6">
-                                <label class="col-xs-6 control-label">审核</label>
-                               <div class="col-xs-6 switch">
-                                            <input type="checkbox" name="authorize[]" value="checkin.browse" data-size="small" data-on-text="开启" data-off-text="关闭" checked="" />
-                                </div>
-                            </div>
-                        </div>
-                        <div class="hr-line-dashed"></div>
-                        <div class="row" style="height:30px">
-                            <div class="col-xs-6">
-                                <label class="col-xs-6 control-label">编辑</label>
-                             <div class="col-xs-6 switch">
-                                            <input type="checkbox" name="authorize[]" value="checkin.browse" data-size="small" data-on-text="开启" data-off-text="关闭" checked="" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-              
+            <?php }?>
             </div>
         </div>
     </div>

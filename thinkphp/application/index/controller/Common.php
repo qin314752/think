@@ -2,6 +2,8 @@
 namespace app\index\controller;
 use \think\Controller;
 use \think\Db;
+use \think\Config;
+
 class Common extends Controller
 {
     public function _initialize() {

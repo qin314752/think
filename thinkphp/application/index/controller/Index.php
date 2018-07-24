@@ -1,12 +1,12 @@
 <?php
 namespace app\index\controller;
 use app\index\controller\Common;
-
 class Index extends Common
 {
     public function index()
     {
-       return  $this->fetch();
+    	
+        return  $this->fetch();
     }
     public function welcome(){
     	return $this->fetch();
