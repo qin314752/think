@@ -11,4 +11,6 @@ class Index extends Common
     public function welcome(){
     	return $this->fetch();
     }
+   
+     
 }

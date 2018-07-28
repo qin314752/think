@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:93:"C:\Users\asus\Desktop\thinkphp\public/../application/index\view\jurisdiction\jurisdiction.php";i:1532335350;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:93:"C:\Users\asus\Desktop\thinkphp\public/../application/index\view\jurisdiction\jurisdiction.php";i:1532403278;}*/ ?>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -13,9 +13,6 @@
 <link rel="stylesheet" type="text/css" href="/admin/lib/Hui-iconfont/1.0.8/iconfont.css" />
 <link rel="stylesheet" type="text/css" href="/admin/static/h-ui.admin/skin/default/skin.css" id="skin" />
 <link rel="stylesheet" type="text/css" href="static/h-ui.admin/css/style.css" />
-   
-
-<link rel="shortcut icon" href="http://mt.mtjfsc.com//admin/favicon.ico?v=1.0" />
 <link href="/admin/css/bootstrap.min.css" rel="stylesheet" />
 <link href="/admin/css/style.css" rel="stylesheet" />
 <link rel="stylesheet" href="/admin/css/bootstrap-switch.min.css" />
@@ -40,6 +37,7 @@
     </style>
 </head>
 <body  class="gray-bg">
+<?php $authorizelist = explode(',', $_GET['authorizelist']);?>    
 <div class="wrapper wrapper-content fadeInRight">
     <div class="tabs-container">
         <div class="tabs-right">
@@ -87,7 +85,11 @@
                                 }
                                 echo '<div class="col-xs-6">';
                                 echo '<label class="col-xs-6 control-label">' . $vv . '</label>';
-                                echo '<div class="col-xs-6 switch"><input type="checkbox" name="authorize[]" value="' . $k . '.' . $kk . '" data-size="small" data-on-text="开启" data-off-text="关闭"  /></div>';
+                                $ischecked = '';
+                                if (in_array($k . '.' . $kk, $authorizelist)) {
+                                    $ischecked = 'checked';
+                                }
+                                echo '<div class="col-xs-6 switch"><input type="checkbox" name="authorize[]" value="' . $k . '.' . $kk . '" data-size="small" data-on-text="开启" data-off-text="关闭" ' . $ischecked . '  /></div>';
                                 echo '</div>';
                                 if ($i % 2 == 0 || $i + 1 == $count) {
                                     echo '</div>';

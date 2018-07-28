@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:79:"C:\Users\asus\Desktop\thinkphp\public/../application/index\view\index\index.php";i:1532072420;s:70:"C:\Users\asus\Desktop\thinkphp\application\index\view\public\_meta.php";i:1532070491;s:72:"C:\Users\asus\Desktop\thinkphp\application\index\view\public\_header.php";i:1532070506;s:70:"C:\Users\asus\Desktop\thinkphp\application\index\view\public\_menu.php";i:1532074123;s:72:"C:\Users\asus\Desktop\thinkphp\application\index\view\public\_footer.php";i:1532070540;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:79:"C:\Users\asus\Desktop\thinkphp\public/../application/index\view\index\index.php";i:1532418194;s:70:"C:\Users\asus\Desktop\thinkphp\application\index\view\public\_meta.php";i:1532418849;s:72:"C:\Users\asus\Desktop\thinkphp\application\index\view\public\_header.php";i:1532070506;s:70:"C:\Users\asus\Desktop\thinkphp\application\index\view\public\_menu.php";i:1532074123;s:72:"C:\Users\asus\Desktop\thinkphp\application\index\view\public\_footer.php";i:1532675088;}*/ ?>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -18,6 +18,9 @@
 <link rel="stylesheet" type="text/css" href="/admin/lib/Hui-iconfont/1.0.8/iconfont.css" />
 <link rel="stylesheet" type="text/css" href="/admin/static/h-ui.admin/skin/default/skin.css" id="skin" />
 <link rel="stylesheet" type="text/css" href="/admin/static/h-ui.admin/css/style.css" />
+<link rel="stylesheet" type="text/css" href="/css/admin.css" />
+
+<link rel="stylesheet" type="text/css" href="/css/sweetalert.css"/>
 <!--[if IE 6]>
 <script type="text/javascript" src="/admin/lib/DD_belatedPNG_0.0.8a-min.js" ></script>
 <script>DD_belatedPNG.fix('*');</script>
@@ -98,8 +101,13 @@
 <script type="text/javascript" src="/admin/lib/jquery/1.9.1/jquery.min.js"></script> 
 <script type="text/javascript" src="/admin/lib/layer/2.4/layer.js"></script>
 <script type="text/javascript" src="/admin/static/h-ui/js/H-ui.min.js"></script>
-<script type="text/javascript" src="/admin/static/h-ui.admin/js/H-ui.admin.js"></script> <!--/_footer 作为公共模版分离出去-->
-
+<script type="text/javascript" src="/admin/static/h-ui.admin/js/H-ui.admin.js"></script> 
+<!--/_footer 作为公共模版分离出去-->
+<script type="text/javascript" src="/js/Validform_v5.3.2.js"></script> 
+<!-- 分页 -->
+<script type="text/javascript" src="/admin/lib/laypage/1.2/laypage.js"></script>
+<script type="text/javascript" src="/admin/lib/datatables/1.10.0/jquery.dataTables.min.js"></script> 
+<script type="text/javascript" src="/admin/lib/My97DatePicker/4.8/WdatePicker.js"></script> 
 <div class="dislpayArrow hidden-xs"><a class="pngfix" href="javascript:void(0);" onClick="displaynavbar(this)"></a></div>
 <section class="Hui-article-box">
 	<div id="Hui-tabNav" class="Hui-tabNav hidden-xs">
